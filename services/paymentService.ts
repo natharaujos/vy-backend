@@ -18,7 +18,7 @@ export async function createPayment(data: any) {
         pending: `${APP_URL}/payment/${data.external_reference}`,
       },
       auto_return: "all",
-      notification_url: `${process.env.API_BASE_URL}/api/payments/webhook`,
+      notification_url: `${APP_URL}/api/payments/webhook`,
     },
     {
       headers: {
