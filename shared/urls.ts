@@ -1,0 +1,1 @@
+const APP_URL="https://vitoriayuri-casamento.web.app"

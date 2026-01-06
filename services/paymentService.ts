@@ -13,9 +13,9 @@ export async function createPayment(data: any) {
         excluded_payment_types: [{ id: "ticket" }, { id: "atm" }],
       },
       back_urls: {
-        success: `https://vitoriayuri-casamento.web.app/payment/${data.external_reference}`,
-        failure: `https://vitoriayuri-casamento.web.app/payment/${data.external_reference}`,
-        pending: `https://vitoriayuri-casamento.web.app/payment/${data.external_reference}`,
+        success: `${APP_URL}/payment/${data.external_reference}`,
+        failure: `${APP_URL}/payment/${data.external_reference}`,
+        pending: `${APP_URL}/payment/${data.external_reference}`,
       },
       auto_return: "all",
       notification_url: `${process.env.API_BASE_URL}/api/payments/webhook`,
