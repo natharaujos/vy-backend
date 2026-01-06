@@ -1,6 +1,7 @@
 import axios from "axios";
 
 const MERCADO_PAGO_ACCESS_TOKEN = process.env.MERCADO_PAGO_ACCESS_TOKEN;
+const APP_URL = process.env.APP_URL || "https://vitoriayuri-casamento.web.app";
 
 export async function createPayment(data: any) {
   const response = await axios.post(
