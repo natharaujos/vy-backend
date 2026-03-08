@@ -12,6 +12,8 @@ export async function createPayment(data: any) {
       payer: data.payer,
       payment_methods: {
         excluded_payment_types: [{ id: "ticket" }, { id: "atm" }],
+        installments: 12,
+        default_installments: 1,
       },
       back_urls: {
         success: `${APP_URL}/payment/${data.external_reference}`,
