@@ -2,6 +2,7 @@ import axios from "axios";
 
 const MERCADO_PAGO_ACCESS_TOKEN = process.env.MERCADO_PAGO_ACCESS_TOKEN;
 const APP_URL = process.env.APP_URL || "https://vitoriayuri-casamento.web.app";
+const API_URL = process.env.API_URL || "https://vy-backend.vercel.app";
 
 export async function createPayment(data: any) {
   const response = await axios.post(
@@ -21,14 +22,14 @@ export async function createPayment(data: any) {
         pending: `${APP_URL}/payment/${data.external_reference}`,
       },
       auto_return: "all",
-      notification_url: `${APP_URL}/api/payments/webhook`,
+      notification_url: `${API_URL}/api/payments/webhook`,
     },
     {
       headers: {
         Authorization: `Bearer ${MERCADO_PAGO_ACCESS_TOKEN}`,
         "Content-Type": "application/json",
       },
-    }
+    },
   );
 
   // Retorna só dados úteis pro front
